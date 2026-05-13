@@ -1,0 +1,19 @@
+from numpy import polynomial
+import numpy as np
+from scipy import optimize
+from numpy import linalg as la
+from math import sqrt
+
+A = np.array([[1, 2], [3, 4]])
+
+
+x = np.array([1, 1])
+
+A_inv = la.inv(A)
+
+print(A_inv @ x)
+
+
+print(x/la.norm(x, 2))
+
+print(-sqrt(2)/2.0, sqrt(2)/2.0)
