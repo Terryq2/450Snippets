@@ -1,0 +1,19 @@
+from numpy import polynomial
+import numpy as np
+from scipy import optimize
+from numpy import linalg as la
+
+
+z23 = -1 - 1j
+z1 = -2
+
+
+def stability_function(z, h):
+    result = 1 + h*z + 1/2 * (h*z) **2
+    if abs(result) <= 1:
+        return True
+    else:
+        return False
+
+print(stability_function(z1, 1.5))
+

@@ -1,0 +1,41 @@
+from numpy import polynomial
+import numpy as np
+from scipy import optimize
+from numpy import linalg as la
+
+
+# from scipy.linalg import hilbert
+# H = hilbert(3)
+
+
+
+# t = np.array([[1, 1], [1,1]])
+
+
+# def check_positive_definite(m):
+#     if not np.allclose(m, m.conj().T):
+#         raise la.LinAlgError
+#     return la.cholesky(m)
+
+
+# print(check_positive_definite(H))
+
+# print(check_positive_definite(t))
+
+
+h = [1, 2, 4, 8]
+
+def lagrange_basis(x, j, h):
+    numerator = 1
+    denominator = 1
+    for i in range(len(h)):
+        
+        if i != j - 1:
+            print(i)
+            print(x, h[i])
+            # print((x-h[i]))
+            numerator *= (x-h[i])
+            denominator *= (h[j-1]-h[i])
+    return numerator/denominator
+
+print(lagrange_basis(2, 1, h))git
